@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmallBizConnect</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="auth-container" id="authForm">
+        <h1>SmallBizConnect</h1>
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button onclick="authAction()">Login</button>
+        <p class="toggle" onclick="toggleForm()">Don't have an account? Sign Up</p>
+      </div>
+    </div>
+
+    <div class="dashboard-container" id="dashboard">
+      <header>
+        <h2 style="color:#4a148c;">Welcome, Business Owner</h2>
+      </header>
+
+      <section class="top-panels">
+        <div class="card credit-limit">
+          <h3>Set Profit Limit</h3>
+          <input type="range" min="0" max="1200" value="600" class="slider" id="creditSlider" />
+          <p>Limit: ₹<span id="creditValue">600</span></p>
+        </div>
+
+        <div class="card profit-stats">
+          <h3>Profit Statistics</h3>
+          <div class="tabs">
+            <button data-type="weekly" class="active">Weekly</button>
+            <button data-type="monthly">Monthly</button>
+            <button data-type="yearly">Yearly</button>
+          </div>
+          <canvas id="statsChart"></canvas>
+        </div>
+
+        <div class="card cards-overview">
+          <h3>Plans</h3>
+          <div class="card-entry">
+            <h3>Plan 1</h3>
+            <p>₹1,950.54</p>
+          </div>
+          <div class="card-entry">
+            <h3>Plan 2</h3>
+            <p>₹2,050.41</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="middle-panels">
+        <div class="card spending">
+          <h3>Monthly Spending</h3>
+          <canvas id="spendingChart"></canvas>
+        </div>
+
+        <div class="card season-trends">
+          <h3>Season Trending Products</h3>
+          <ul>
+            <li>Summer - Sunglasses</li>
+            <li>Winter - Woolen Caps</li>
+          </ul>
+        </div>
+
+        <div class="card top-products">
+          <h3>Highest Selling Products</h3>
+          <ul>
+            <li>Product A</li>
+            <li>Product B</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="bottom-panels">
+        <div class="card business-potential">
+          <h3>Business Potential Forecast</h3>
+          <p>Expected growth next quarter: <strong>12%</strong></p>
+        </div>
+
+        <div class="card order-list">
+          <h3>Customer Orders</h3>
+          <ul id="orderList">
+            <li>Order #001 - Completed</li>
+            <li>Order #002 - In Progress</li>
+            <li>Order #003 - Shipped</li>
+          </ul>
+        </div>
+
+        <div class="card business-comparison">
+          <h3>Industry Comparison</h3>
+          <p>Your business is performing <strong>15%</strong> better than the average in your niche.</p>
+        </div>
+      </section>
+    </div>
+    <script src = "app.js"></script>
+  </body>
+</html>
